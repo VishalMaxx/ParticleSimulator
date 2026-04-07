@@ -50,3 +50,22 @@ def plot_all():
 if __name__ == "__main__":
     plot_all()
     print("All 6 required plots generated in /plots")
+def plot_parallel_scaling():
+    if not os.path.exists('results/parallel_scaling.dat'): return
+    data = np.loadtxt('results/parallel_scaling.dat')
+    threads = data[:, 0]
+    times = data[:, 1]
+    t1 = times[0]
+    speedup = t1 / times
+    efficiency = speedup / threads
+
+    plt.figure()
+    plt.plot(threads, speedup, 'bo-', label='Measured Speedup')
+    plt.plot(threads, threads, 'r--', label='Ideal Speedup')
+    plt.xlabel('Threads'); plt.ylabel('Speedup S(p)'); plt.legend(); plt.grid()
+    plt.savefig('plots/speedup.png')
+
+    plt.figure()
+    plt.plot(threads, efficiency, 'go-')
+    plt.xlabel('Threads'); plt.ylabel('Efficiency E(p)'); plt.ylim(0, 1.1); plt.grid()
+    plt.savefig('plots/efficiency.png')

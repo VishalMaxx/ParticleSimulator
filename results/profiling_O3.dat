@@ -1,0 +1,7 @@
+ Function_Name Time(s)
+ Zero_Forces    6.5000000000017995E-004
+ Add_Gravity    6.4000000000025798E-004
+ Wall_Contacts    1.2939999999999827E-003
+ Particle_Contacts   0.47919100000000009     
+ Integration    1.9660000000000302E-003
+ TOTAL_RUNTIME   0.48558999999999997     
