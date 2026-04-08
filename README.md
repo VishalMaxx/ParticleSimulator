@@ -1,5 +1,5 @@
-# 🔬 3D DEM Particle Simulator
-### HPSC 2026 — Assignment 1 | IIT Mandi
+#  3D DEM Particle Simulator
+### HPSC 2026 - Assignment 1 | IIT Mandi
 
 > A high-performance, parallelized **Discrete Element Method (DEM)** solver for spherical particles, implemented in Fortran with OpenMP. Developed as part of the High Performance Scientific Computing course under Dr. Gaurav Bhutani.
 
@@ -83,7 +83,7 @@ export OMP_NUM_THREADS=8
 
 Three tests confirm physical correctness before parallelization:
 
-### Test 1 — Free Fall
+### Test 1 - Free Fall
 Single particle dropped from rest. Numerical trajectory compared against the analytical solution $z(t) = z_0 - \frac{1}{2}gt^2$.
 
 | Trajectory Comparison | Convergence (Error vs Δt) |
@@ -100,10 +100,10 @@ Pointwise error < 5×10⁻⁴ m. Log-log slope = 1.00 ± 0.02, confirming **firs
 | 0.01250 | 0.06131 | 2.00 |
 | 0.00625 | 0.03066 | 2.00 |
 
-### Test 2 — Constant Velocity
+### Test 2 - Constant Velocity
 Gravity disabled; prescribed initial velocity. Momentum conserved to machine precision (<10⁻¹⁴ m/s drift over 10⁴ timesteps).
 
-### Test 3 — Particle Bounce
+### Test 3 - Particle Bounce
 Particle dropped onto floor. Verified monotonic rebound-height decay and no unphysical wall penetration.
 
 | Bounce Height Decay | Velocity Trace |
